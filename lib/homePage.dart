@@ -58,6 +58,10 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        child: FaIcon(
+          FontAwesomeIcons.motorcycle,
+          size: 20,
+        ),
       ),
     );
   }
@@ -101,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {},
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Color(0xff007042),
+                            color: Colors.green[600],
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
                         child: Padding(
@@ -124,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.white,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             border: Border.all(
-                                width: 1.0, color: Color(0xff007042))),
+                                width: 1.0, color: Colors.green[600])),
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(16, 5, 16, 5),
                           child: Text(

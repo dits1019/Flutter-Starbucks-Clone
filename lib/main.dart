@@ -6,6 +6,7 @@ import 'package:flutter_starbucks/orderPage.dart';
 import 'package:flutter_starbucks/otherPage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +26,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(),
+      home: AnimatedSplashScreen(
+        splash: Image.asset('image/logo.png'),
+        nextScreen: MyHomePage(),
+        splashTransition: SplashTransition.fadeTransition,
+        splashIconSize: 130,
+        duration: 2000,
+        backgroundColor: Colors.green[600],
+      ),
     );
   }
 }
