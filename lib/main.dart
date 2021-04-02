@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Color(0xff007042),
+        selectedItemColor: Colors.green[600],
         unselectedItemColor: Colors.grey,
         selectedFontSize: 12,
         unselectedFontSize: 12,
