@@ -154,3 +154,53 @@ Widget NewMenuItem(String url, String name) {
     ),
   );
 }
+
+Widget EventList() {
+  return Container(
+    height: 300,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        EvnetListItem('image/event1.jpg', '[별다방] 웰컴 보너스 스타',
+            '스타벅스 별다방 방문 시, 영수증당 별 3개 증정')
+      ],
+    ),
+  );
+}
+
+Widget EvnetListItem(String image, String title, String subtitle) {
+  return Padding(
+    padding: const EdgeInsets.all(10.0),
+    child: Column(
+      children: [
+        Container(
+          width: 280,
+          height: 180,
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            child: Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 6),
+          width: 280,
+          child: Text(
+            title,
+            textAlign: TextAlign.left,
+            style: TextStyle(fontSize: 17),
+          ),
+        ),
+        Container(
+          width: 280,
+          child: Text(
+            subtitle,
+            style: TextStyle(color: Colors.grey, fontSize: 14),
+          ),
+        ),
+      ],
+    ),
+  );
+}

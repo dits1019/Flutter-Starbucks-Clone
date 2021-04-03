@@ -8,12 +8,51 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // final ScrollController _scrollController = ScrollController();
+
+  // var scrollOffset = 0.0;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _scrollController.addListener(() {
+  //     // print('offset = ${_scrollController.offset}');
+  //     scrollOffset = _scrollController.offset;
+  //     // print(scrollOffset);
+  //   });
+  // }
+
+  // @override
+  // void dispose() {
+  //   _scrollController.dispose();
+  //   super.dispose();
+  // }
+
+  // Widget changebutton() {
+  //   setState(() {
+  //     return scrollOffset >= 300
+  //         ? FloatingActionButton(
+  //             onPressed: () {},
+  //             child: FaIcon(
+  //               FontAwesomeIcons.motorcycle,
+  //               size: 20,
+  //             ),
+  //           )
+  //         : FloatingActionButton(
+  //             onPressed: () {},
+  //             child: FaIcon(
+  //               FontAwesomeIcons.ad,
+  //               size: 20,
+  //             ),
+  //           );
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
+          // controller: _scrollController,
+          // scrollDirection: Axis.vertical,
           children: [
             SizedBox(
               width: double.infinity,
@@ -51,7 +90,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               color: Colors.grey[100],
               width: double.infinity,
-              height: 330,
+              height: 300,
               child: NewMenuCard(),
             ),
             Container(
@@ -93,17 +132,16 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-            )
+            ),
+            EventList()
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: FaIcon(
-          FontAwesomeIcons.motorcycle,
-          size: 20,
-        ),
-      ),
-    );
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: FaIcon(
+            FontAwesomeIcons.motorcycle,
+            size: 20,
+          ),
+        ));
   }
 }
