@@ -23,9 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Starbucks Clone',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+      theme: ThemeData(accentColor: Color(0xff00a862)),
       home: AnimatedSplashScreen(
         splash: Image.asset('image/logo.png'),
         nextScreen: MyHomePage(),

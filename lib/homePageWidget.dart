@@ -107,17 +107,17 @@ Widget NewMenuCard() {
           scrollDirection: Axis.horizontal,
           children: [
             NewMenuItem(
-                'https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[94]_20150813222021797.jpg',
-                '리얼 블루베리 베이글'),
+                'https://image.istarbucks.co.kr/upload/store/skuimg/2019/09/[9200000002487]_20190919181354811.jpg',
+                '나이트로 바닐라 크림'),
             NewMenuItem(
-                'https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[94]_20150813222021797.jpg',
-                '리얼 블루베리 베이글'),
+                'https://image.istarbucks.co.kr/upload/store/skuimg/2021/02/[9200000003273]_20210217102625012.jpg',
+                '미드나잇 베르가못 콜드 브루'),
             NewMenuItem(
-                'https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[94]_20150813222021797.jpg',
-                '리얼 블루베리 베이글'),
+                'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9200000003509]_20210322093452399.jpg',
+                '벨벳 다크 모카 나이트로'),
             NewMenuItem(
-                'https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[94]_20150813222021797.jpg',
-                '리얼 블루베리 베이글'),
+                'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9200000003507]_20210322093414289.jpg',
+                '프렌치 애플 타르트 나이트로'),
           ],
         ),
       ),
@@ -154,7 +154,7 @@ Widget EventList() {
       children: [
         EvnetListItem('image/event1.jpg', '[별다방] 웰컴 보너스 스타',
             '스타벅스 별다방 방문 시, 영수증당 별 3개 증정'),
-        EvnetListItem('image/event1.jpg', '4월2일, 3.1 필립림 콜라보 MD 출시',
+        EvnetListItem('image/event2.jpg', '4월2일, 3.1 필립림 콜라보 MD 출시',
             '화려하고 세련된 감성의 상품을 만나보세요.')
       ],
     ),
@@ -257,6 +257,33 @@ Widget PopularMenuList(String url, String name, var rank) {
           ],
         ),
       ],
+    ),
+  );
+}
+
+Widget ShadowContainer(double height, Widget widget) {
+  return ClipRRect(
+    child: Container(
+      margin: EdgeInsets.only(left: 10, right: 10),
+      height: height,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius:
+            BorderRadius.all(Radius.circular(5)), //border corner radius
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5), //color of shadow
+            spreadRadius: 1, //spread radius
+            blurRadius: 10, // blur radius
+            offset: Offset(0, 2), // changes position of shadow
+            //first paramerter of offset is left-right
+            //second parameter is top to down
+          ),
+          //you can set more BoxShadow() here
+        ],
+      ),
+      child: widget,
     ),
   );
 }
