@@ -128,12 +128,32 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Text(
                     'See all',
-                    style: TextStyle(color: Colors.green[600]),
+                    style: TextStyle(color: Color(0xff00a862)),
                   )
                 ],
               ),
             ),
-            EventList()
+            EventList(),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '이 시간대 인기 메뉴',
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: Text(
+                      '주말 오후 5시 기준',
+                      style: TextStyle(color: Colors.grey, fontSize: 13),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            PopularMenu(),
           ],
         ),
         floatingActionButton: FloatingActionButton(

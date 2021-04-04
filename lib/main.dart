@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         splashTransition: SplashTransition.fadeTransition,
         splashIconSize: 130,
         duration: 2000,
-        backgroundColor: Colors.green[600],
+        backgroundColor: Color(0xff00a862),
       ),
     );
   }
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.green[600],
+        selectedItemColor: Color(0xff00a862),
         unselectedItemColor: Colors.grey,
         selectedFontSize: 12,
         unselectedFontSize: 12,
