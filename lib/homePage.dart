@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starbucks/homePageWidget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter/animation.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,18 +13,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
-  // var scrollOffset = 0.0;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _scrollController.addListener(() {
-  //     // print('offset = ${_scrollController.offset}');
-  //     scrollOffset = _scrollController.offset;
-  //     // print(scrollOffset);
-  //   });
-  // }
+  double scrollOffset = 0.0;
+  bool upScroll = true;
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      scrollOffset = _scrollController.offset;
+      print(scrollOffset);
+      if (scrollOffset >= 100) {
+        upScroll = true;
+        print(upScroll);
+      } else {
+        upScroll = false;
+        print(upScroll);
+      }
+      // print(scrollOffset);
+    });
+  }
 
   // @override
   // void dispose() {
@@ -53,10 +62,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      if (_scrollController.hasClients) {
+        print('error');
+        // scrollOffset = _scrollController.offset;
+        print(scrollOffset);
+      }
+    });
+
     return Scaffold(
         body: ListView(
-          // controller: _scrollController,
-          // scrollDirection: Axis.vertical,
+          controller: _scrollController,
           children: [
             SizedBox(
               width: double.infinity,
@@ -91,6 +107,19 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            // Container(
+            //   color: Colors.green[100],
+            //   padding: EdgeInsets.zero,
+            //   child: AnimatedContainer(
+            //     width: upScroll ? 200.0 : 100.0,
+            //     height: upScroll ? 100.0 : 200.0,
+            //     child: FlutterLogo(size: 50),
+            //     alignment:
+            //         upScroll ? Alignment.topCenter : Alignment.bottomCenter,
+            //     duration: Duration(seconds: 1),
+            //     curve: Curves.easeIn,
+            //   ),
+            // ),
             Container(
               color: Colors.grey[100],
               width: double.infinity,
