@@ -274,6 +274,7 @@ class _HomePageState extends State<HomePage> {
           height: 50,
           child: upScroll
               ? Row(
+                  //direction: Axis.horizontal,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 15),
@@ -283,16 +284,19 @@ class _HomePageState extends State<HomePage> {
                         size: 20,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Text(
-                        'Delivers',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2,
-                        ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Text('Delivers',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2,
+                            ),
+                            softWrap: false,
+                            overflow: TextOverflow.clip),
                       ),
                     )
                   ],
