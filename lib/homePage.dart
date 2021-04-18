@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   double scrollOffset = 0.0;
   //스크롤이 위쪽에 있는지
-  bool upScroll;
+  late bool upScroll;
 
   @override
   void initState() {

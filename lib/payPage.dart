@@ -22,7 +22,8 @@ class PayPage extends StatelessWidget {
             ),
           ),
           SliverList(
-            delegate: new SliverChildListDelegate(_buildList(1)),
+            delegate:
+                new SliverChildListDelegate(_buildList(1) as List<Widget>),
           )
         ],
       ),
@@ -31,7 +32,7 @@ class PayPage extends StatelessWidget {
 }
 
 List _buildList(int count) {
-  List<Widget> listItems = List();
+  List<Widget>? listItems = [];
 
   for (int i = 0; i < count; i++) {
     listItems.add(
